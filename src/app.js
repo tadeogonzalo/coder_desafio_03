@@ -17,7 +17,7 @@ app.get( '/products', async ( req, res ) => {
 
     if( !limit ) return res.send(productos);
 
-    const productosFiltrados = productos.filter( producto => producto.id <= limit );
+    const productosFiltrados = productos.slice( 0, limit );
 
     res.send( productosFiltrados );
     
